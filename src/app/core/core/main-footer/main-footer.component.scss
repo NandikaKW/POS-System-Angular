@@ -1,0 +1,296 @@
+// ─── Design Tokens ────────────────────────────────────────────────────────────
+$primary:       #0066CC;
+$primary-dark:  #004A99;
+$primary-light: #0080FF;
+$bg-footer:     #0D1B2E;
+$bg-footer-mid: #132338;
+$bg-footer-bar: #0A1520;
+$text-muted:    rgba(255, 255, 255, 0.5);
+$text-soft:     rgba(255, 255, 255, 0.75);
+$text-white:    #FFFFFF;
+$border-dark:   rgba(255, 255, 255, 0.08);
+$white:         #FFFFFF;
+
+// ─── Footer ───────────────────────────────────────────────────────────────────
+.footer {
+  background: $bg-footer;
+  font-family: 'Inter', sans-serif;
+}
+
+// ─── Top Section ──────────────────────────────────────────────────────────────
+.footer__top {
+  padding: 72px 0 56px;
+  border-bottom: 1px solid $border-dark;
+}
+
+.footer__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 64px;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  &--row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+
+    @media (max-width: 640px) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+}
+
+// ─── Brand ────────────────────────────────────────────────────────────────────
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer__logo-icon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+}
+
+.footer__logo-text {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: $text-white;
+  letter-spacing: -0.02em;
+}
+
+.footer__tagline {
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: $text-muted;
+  margin: 0;
+  max-width: 260px;
+}
+
+// ─── Social ───────────────────────────────────────────────────────────────────
+.footer__social {
+  display: flex;
+  gap: 10px;
+}
+
+.footer__social-link {
+  width: 36px;
+  height: 36px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid $border-dark;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $text-muted;
+  text-decoration: none;
+  transition: all 0.2s ease;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  &:hover {
+    background: $primary;
+    border-color: $primary;
+    color: $text-white;
+    transform: translateY(-2px);
+  }
+}
+
+// ─── Trust Badges ─────────────────────────────────────────────────────────────
+.footer__badges {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.footer__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: $text-muted;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid $border-dark;
+  padding: 5px 10px;
+  border-radius: 6px;
+
+  svg {
+    width: 13px;
+    height: 13px;
+  }
+}
+
+// ─── Nav Grid ─────────────────────────────────────────────────────────────────
+.footer__nav {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+
+  @media (max-width: 700px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.footer__col-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: $text-white;
+  margin: 0 0 16px;
+}
+
+.footer__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer__link {
+  font-size: 0.875rem;
+  color: $text-muted;
+  text-decoration: none;
+  transition: color 0.15s ease;
+
+  &:hover {
+    color: $text-white;
+  }
+}
+
+// ─── Newsletter Bar ───────────────────────────────────────────────────────────
+.footer__newsletter-bar {
+  background: $bg-footer-mid;
+  padding: 28px 0;
+  border-bottom: 1px solid $border-dark;
+}
+
+.footer__newsletter-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.footer__newsletter-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: $text-white;
+}
+
+.footer__newsletter-sub {
+  font-size: 0.78rem;
+  color: $text-muted;
+}
+
+.footer__newsletter-form {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+
+  @media (max-width: 480px) {
+    width: 100%;
+  }
+}
+
+.footer__input {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid $border-dark;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 0.875rem;
+  color: $text-white;
+  outline: none;
+  width: 240px;
+  font-family: 'Inter', sans-serif;
+  transition: border-color 0.2s ease;
+
+  &::placeholder {
+    color: $text-muted;
+  }
+
+  &:focus {
+    border-color: $primary;
+    background: rgba(0, 102, 204, 0.1);
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+  }
+}
+
+.footer__subscribe-btn {
+  background: $primary;
+  color: $white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s ease, transform 0.2s ease;
+  font-family: 'Inter', sans-serif;
+
+  &:hover {
+    background: $primary-dark;
+    transform: translateY(-1px);
+  }
+}
+
+// ─── Bottom Bar ───────────────────────────────────────────────────────────────
+.footer__bottom {
+  background: $bg-footer-bar;
+  padding: 20px 0;
+}
+
+.footer__copy {
+  font-size: 0.8rem;
+  color: $text-muted;
+  margin: 0;
+}
+
+.footer__legal {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.footer__legal-link {
+  font-size: 0.8rem;
+  color: $text-muted;
+  text-decoration: none;
+  transition: color 0.15s ease;
+
+  &:hover {
+    color: $text-white;
+  }
+}
+
+.footer__legal-sep {
+  color: $border-dark;
+  font-size: 0.8rem;
+}

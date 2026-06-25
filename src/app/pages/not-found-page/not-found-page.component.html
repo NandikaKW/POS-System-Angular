@@ -1,0 +1,82 @@
+<div class="not-found">
+  <div class="not-found__background">
+    <div class="not-found__blob not-found__blob--1"></div>
+    <div class="not-found__blob not-found__blob--2"></div>
+    <div class="not-found__grid"></div>
+  </div>
+
+  <div class="not-found__container">
+
+    <!-- Animated 404 Display -->
+    <div class="not-found__code-wrap">
+      <span class="not-found__four not-found__four--left">4</span>
+      <div class="not-found__zero">
+        <div class="not-found__zero-screen">
+          <div class="not-found__zero-header">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="not-found__zero-body">
+            <span class="not-found__zero-line not-found__zero-line--short"></span>
+            <span class="not-found__zero-line"></span>
+            <span class="not-found__zero-line not-found__zero-line--mid"></span>
+            <div class="not-found__zero-receipt">
+              <span></span><span></span><span></span>
+              <div class="not-found__zero-receipt-total">
+                <span>ERROR</span>
+                <span>404</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <span class="not-found__four not-found__four--right">4</span>
+    </div>
+
+    <!-- Message -->
+    <div class="not-found__message">
+      <span class="not-found__eyebrow">Page Not Found</span>
+      <h1 class="not-found__title">This page went off the grid.</h1>
+      <p class="not-found__subtitle">
+        Looks like this page doesn't exist or was moved. Let's get you back to your dashboard.
+      </p>
+    </div>
+
+    <!-- Actions -->
+    <div class="not-found__actions">
+      <button class="not-found__btn not-found__btn--primary" (click)="goHome()">
+        <svg viewBox="0 0 20 20" fill="none">
+          <path d="M3 10L10 3l7 7M5 8.5V17h4v-4h2v4h4V8.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Back to Dashboard
+      </button>
+      <button class="not-found__btn not-found__btn--ghost" (click)="goBack()">
+        <svg viewBox="0 0 20 20" fill="none">
+          <path d="M15 10H5M9 5l-5 5 5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Go Back
+      </button>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="not-found__links-wrap">
+      <span class="not-found__links-label">Or jump to:</span>
+      <div class="not-found__links">
+        <a
+          *ngFor="let link of quickLinks"
+          [routerLink]="link.route"
+          class="not-found__quick-link">
+          <svg viewBox="0 0 16 16" fill="none" [innerHTML]="link.iconPath"></svg>
+          {{ link.label }}
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom Wave -->
+  <div class="not-found__wave">
+    <svg viewBox="0 0 1440 60" preserveAspectRatio="none">
+      <path d="M0,30 C480,60 960,0 1440,30 L1440,60 L0,60 Z" fill="#F7FAFF"/>
+    </svg>
+  </div>
+</div>

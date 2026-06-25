@@ -1,0 +1,100 @@
+<section class="hero">
+  <div class="hero__background">
+    <div class="hero__blob hero__blob--1"></div>
+    <div class="hero__blob hero__blob--2"></div>
+    <div class="hero__grid-overlay"></div>
+  </div>
+
+  <div class="hero__container">
+    <div class="hero__content">
+      <span class="hero__eyebrow">
+        <span class="hero__eyebrow-dot"></span>
+        Next-Gen Point of Sale
+      </span>
+
+      <h1 class="hero__headline">
+        Sell Smarter.<br />
+        <span class="hero__headline--accent">Grow Faster.</span>
+      </h1>
+
+      <p class="hero__subtext">
+        A powerful POS system built for modern businesses. Manage sales,
+        inventory, staff, and customers — all from one seamless dashboard.
+      </p>
+
+      <div class="hero__actions">
+        <button class="btn btn--primary" (click)="onGetStarted()">
+          Get Started Free
+          <svg class="btn__icon" viewBox="0 0 20 20" fill="none">
+            <path d="M4 10h12M11 5l5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button class="btn btn--ghost" (click)="onWatchDemo()">
+          <svg class="btn__icon btn__icon--play" viewBox="0 0 20 20" fill="none">
+            <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.8"/>
+            <path d="M8 7.5l5 2.5-5 2.5V7.5z" fill="currentColor"/>
+          </svg>
+          Watch Demo
+        </button>
+      </div>
+
+      <div class="hero__stats">
+        <div class="hero__stat" *ngFor="let stat of stats">
+          <span class="hero__stat-value">{{ stat.value }}</span>
+          <span class="hero__stat-label">{{ stat.label }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__visual">
+      <div class="hero__card hero__card--main">
+        <div class="hero__card-header">
+          <div class="hero__card-dots">
+            <span></span><span></span><span></span>
+          </div>
+          <span class="hero__card-title">Today's Summary</span>
+        </div>
+        <div class="hero__card-body">
+          <div class="hero__metric">
+            <span class="hero__metric-label">Total Revenue</span>
+            <span class="hero__metric-value">$12,480.00</span>
+            <span class="hero__metric-badge hero__metric-badge--up">▲ 18.4%</span>
+          </div>
+          <div class="hero__chart">
+            <div class="hero__bar" *ngFor="let bar of chartBars" [style.height.%]="bar"></div>
+          </div>
+          <div class="hero__chart-labels">
+            <span *ngFor="let label of chartLabels">{{ label }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__card hero__card--float hero__card--float-top">
+        <svg viewBox="0 0 20 20" fill="none">
+          <path d="M3 5h14M3 10h14M3 15h8" stroke="#0066CC" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        <div>
+          <span class="hero__float-label">Orders Today</span>
+          <span class="hero__float-value">247</span>
+        </div>
+      </div>
+
+      <div class="hero__card hero__card--float hero__card--float-bottom">
+        <svg viewBox="0 0 20 20" fill="none">
+          <circle cx="10" cy="10" r="7" stroke="#00CC88" stroke-width="1.8"/>
+          <path d="M7 10l2 2 4-4" stroke="#00CC88" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        <div>
+          <span class="hero__float-label">Payment Success</span>
+          <span class="hero__float-value hero__float-value--green">99.8%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero__wave">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+      <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#F7FAFF"/>
+    </svg>
+  </div>
+</section>

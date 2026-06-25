@@ -1,0 +1,467 @@
+// ─── Design Tokens ────────────────────────────────────────────────────────────
+$primary-blue: #00A3FF;
+$primary-blue-dark: #0088CC;
+$primary-blue-light: #33B5FF;
+$text-dark: #1A1A2E;
+$text-mid: #4A5568;
+$text-light: #718096;
+$bg-light: #F7FAFF;
+$bg-white: #FFFFFF;
+$border-light: #E2E8F0;
+$shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+$shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.1);
+$success: #48BB78;
+$danger: #FC8181;
+$warning: #F6AD55;
+$transition: all 0.3s ease;
+
+// ─── Page Container ───────────────────────────────────────────────────────────
+.page-container {
+  padding: 24px;
+  background: $bg-light;
+  min-height: 100%;
+}
+
+// ─── Page Header ──────────────────────────────────────────────────────────────
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+  background: $bg-white;
+  padding: 20px 24px;
+  border-radius: 12px;
+  box-shadow: $shadow;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.page-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: $text-dark;
+  margin: 0;
+}
+
+.record-count {
+  font-size: 0.813rem;
+  color: $text-light;
+  background: $bg-light;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+// ─── Search Bar ──────────────────────────────────────────────────────────────
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: $bg-light;
+  border-radius: 8px;
+  padding: 0 12px;
+  border: 2px solid transparent;
+  transition: $transition;
+  min-width: 280px;
+
+  &:focus-within {
+    border-color: $primary-blue;
+    background: $bg-white;
+    box-shadow: 0 0 0 4px rgba($primary-blue, 0.1);
+  }
+}
+
+.search-icon {
+  color: $text-light;
+  font-size: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+.search-input {
+  border: none;
+  background: transparent;
+  padding: 10px 8px;
+  font-size: 0.875rem;
+  flex: 1;
+  outline: none;
+  color: $text-dark;
+
+  &::placeholder {
+    color: $text-light;
+  }
+}
+
+.clear-icon {
+  color: $text-light;
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  transition: $transition;
+
+  &:hover {
+    color: $text-dark;
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+}
+
+// ─── Primary Button ──────────────────────────────────────────────────────────
+.btn-primary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, $primary-blue 0%, $primary-blue-dark 100%);
+  color: $bg-white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: $transition;
+  white-space: nowrap;
+
+  mat-icon {
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba($primary-blue, 0.3);
+  }
+
+  &:active {
+    transform: scale(0.96);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+}
+
+// ─── Table ──────────────────────────────────────────────────────────────────
+.table-wrapper {
+  background: $bg-white;
+  border-radius: 12px;
+  box-shadow: $shadow;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+
+  thead {
+    background: linear-gradient(135deg, $bg-light 0%, darken($bg-light, 2%) 100%);
+
+    th {
+      padding: 14px 16px;
+      text-align: left;
+      font-size: 0.813rem;
+      font-weight: 600;
+      color: $text-mid;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 2px solid $border-light;
+      position: sticky;
+      top: 0;
+      background: $bg-light;
+      z-index: 10;
+    }
+  }
+
+  tbody {
+    tr {
+      transition: $transition;
+      border-bottom: 1px solid $border-light;
+
+      &:hover {
+        background: rgba($primary-blue, 0.02);
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  td {
+    padding: 14px 16px;
+    font-size: 0.875rem;
+    color: $text-dark;
+    vertical-align: middle;
+  }
+}
+
+// ─── Cell Styles ─────────────────────────────────────────────────────────────
+.id-cell {
+  font-weight: 600;
+  color: $text-light;
+  width: 60px;
+}
+
+.name-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 150px;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, $primary-blue 0%, $primary-blue-dark 100%);
+  color: $bg-white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.875rem;
+  flex-shrink: 0;
+  text-transform: uppercase;
+}
+
+.address-cell {
+  max-width: 200px;
+  word-break: break-word;
+}
+
+.salary-cell {
+  font-weight: 600;
+  color: $primary-blue;
+}
+
+// ─── Actions ─────────────────────────────────────────────────────────────────
+.actions-cell {
+  display: flex;
+  gap: 8px;
+  min-width: 100px;
+}
+
+.icon-btn {
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: $transition;
+  background: transparent;
+
+  mat-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+  }
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+
+  &.edit-btn {
+    color: $primary-blue;
+
+    &:hover {
+      background: rgba($primary-blue, 0.1);
+    }
+  }
+
+  &.delete-btn {
+    color: $danger;
+
+    &:hover {
+      background: rgba($danger, 0.1);
+    }
+  }
+}
+
+// ─── Empty State ─────────────────────────────────────────────────────────────
+.empty-state {
+  text-align: center;
+  padding: 60px 20px !important;
+
+  mat-icon {
+    font-size: 48px;
+    width: 48px;
+    height: 48px;
+    color: $text-light;
+    margin-bottom: 12px;
+  }
+
+  p {
+    color: $text-light;
+    font-size: 1rem;
+    margin: 0;
+  }
+}
+
+// ─── Pagination ──────────────────────────────────────────────────────────────
+.pagination-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  background: $bg-white;
+  padding: 16px 24px;
+  border-radius: 12px;
+  box-shadow: $shadow;
+}
+
+.pagination-info {
+  font-size: 0.875rem;
+  color: $text-mid;
+}
+
+// ─── Responsive ──────────────────────────────────────────────────────────────
+@media (max-width: 1024px) {
+  .page-header {
+    padding: 16px 20px;
+  }
+
+  .search-bar {
+    min-width: 200px;
+  }
+
+  .data-table {
+    font-size: 0.813rem;
+
+    th, td {
+      padding: 12px 14px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .page-container {
+    padding: 16px;
+  }
+
+  .page-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .header-left {
+    justify-content: space-between;
+  }
+
+  .header-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .search-bar {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .btn-primary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
+    border-radius: 8px;
+  }
+
+  .data-table {
+    min-width: 600px;
+  }
+
+  .pagination-wrapper {
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 16px;
+  }
+
+  .pagination-info {
+    font-size: 0.813rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-container {
+    padding: 12px;
+  }
+
+  .page-title {
+    font-size: 1.25rem;
+  }
+
+  .record-count {
+    font-size: 0.75rem;
+  }
+
+  .page-header {
+    padding: 12px;
+  }
+
+  .pagination-info {
+    font-size: 0.75rem;
+  }
+
+  .icon-btn {
+    width: 30px;
+    height: 30px;
+
+    mat-icon {
+      font-size: 16px;
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+// ─── Custom Scrollbar ──────────────────────────────────────────────────────
+.table-wrapper {
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $bg-light;
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $border-light;
+    border-radius: 4px;
+
+    &:hover {
+      background: $text-light;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+.pos-header {
+  background-color: #0066CC;
+  padding: 10px 15px;
+}
+
+/* Brand text */
+.navbar-brand {
+  font-size: 18px;
+}
+
+/* LOGO CLEAN (no border, perfect circle) */
+.navbar-brand img {
+  object-fit: cover;
+  border: none;
+}
+
+/* LIGHT BUTTON (Dashboard) */
+.btn-light {
+  background-color: #ffffff;
+  color: #0066CC;
+  border: none;
+}
+
+.btn-light:hover {
+  background-color: #e6f0ff;
+  color: #004a99;
+}
+
+/* OUTLINE BUTTONS */
+.btn-outline-light {
+  border-color: white;
+  color: white;
+}
+
+.btn-outline-light:hover {
+  background-color: white;
+  color: #0066CC;
+}
+
+/* PRIMARY BUTTON (Submit styled to match theme) */
+.btn-primary {
+  background-color: #ffffff;
+  color: #0066CC;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #e6f0ff;
+  color: #004a99;
+}

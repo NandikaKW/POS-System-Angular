@@ -1,0 +1,404 @@
+// ─── Design Tokens ────────────────────────────────────────────────────────────
+$primary-blue: #00A3FF;
+$primary-blue-dark: #0088CC;
+$primary-blue-light: #33B5FF;
+$text-dark: #1A1A2E;
+$text-mid: #4A5568;
+$text-light: #718096;
+$bg-light: #F7FAFF;
+$bg-white: #FFFFFF;
+$border-light: #E2E8F0;
+$error: #FC8181;
+$error-dark: #E53E3E;
+$success: #48BB78;
+$warning: #F6AD55;
+$shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+$transition: all 0.3s ease;
+
+// ─── Dialog Container ──────────────────────────────────────────────────────
+.dialog-container {
+  background: $bg-white;
+  border-radius: 12px;
+  overflow: hidden;
+  max-width: 100%;
+  box-shadow: $shadow;
+}
+
+// ─── Header ──────────────────────────────────────────────────────────────────
+.dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  background: linear-gradient(135deg, $primary-blue 0%, $primary-blue-dark 100%);
+  color: $bg-white;
+
+  &-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+}
+
+.header-icon {
+  font-size: 28px;
+  width: 28px;
+  height: 28px;
+  color: $bg-white;
+}
+
+.dialog-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.close-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: $bg-white;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: $transition;
+  width: 36px;
+  height: 36px;
+
+  mat-icon {
+    font-size: 22px;
+    width: 22px;
+    height: 22px;
+  }
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: rotate(90deg);
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+}
+
+// ─── Body ────────────────────────────────────────────────────────────────────
+.dialog-body {
+  padding: 24px 24px 16px;
+  max-height: 60vh;
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $border-light;
+    border-radius: 2px;
+
+    &:hover {
+      background: $text-light;
+    }
+  }
+}
+
+// ─── ID Badge ────────────────────────────────────────────────────────────────
+.id-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px 6px 12px;
+  background: $bg-light;
+  border-radius: 20px;
+  border: 1px solid $border-light;
+  margin-bottom: 20px;
+  font-size: 0.813rem;
+  color: $text-mid;
+
+  mat-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    color: $primary-blue;
+  }
+
+  strong {
+    color: $text-dark;
+    font-weight: 700;
+  }
+}
+
+// ─── Form Groups ─────────────────────────────────────────────────────────────
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: $text-mid;
+  margin-bottom: 6px;
+
+  .label-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    color: $primary-blue;
+  }
+
+  .required {
+    color: $error;
+    font-weight: 700;
+    margin-left: 2px;
+  }
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px 14px;
+  border: 2px solid $border-light;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  color: $text-dark;
+  transition: $transition;
+  box-sizing: border-box;
+  background: $bg-white;
+
+  &::placeholder {
+    color: $text-light;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $primary-blue;
+    box-shadow: 0 0 0 4px rgba($primary-blue, 0.1);
+  }
+
+  &.error {
+    border-color: $error;
+    background: rgba($error, 0.04);
+
+    &:focus {
+      box-shadow: 0 0 0 4px rgba($error, 0.1);
+    }
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.input-prefix {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .prefix {
+    position: absolute;
+    left: 14px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: $text-mid;
+    pointer-events: none;
+  }
+
+  .form-control-prefix {
+    padding-left: 28px;
+  }
+}
+
+.form-error {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.75rem;
+  color: $error-dark;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// ─── Preview Card ────────────────────────────────────────────────────────────
+.preview-card {
+  margin-top: 20px;
+  padding: 16px;
+  background: $bg-light;
+  border-radius: 8px;
+  border: 1px solid $border-light;
+  animation: fadeIn 0.3s ease;
+}
+
+.preview-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.813rem;
+  font-weight: 600;
+  color: $text-mid;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid $border-light;
+
+  mat-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    color: $primary-blue;
+  }
+}
+
+.preview-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 16px;
+}
+
+.preview-item {
+  display: flex;
+  gap: 6px;
+  font-size: 0.813rem;
+}
+
+.preview-label {
+  font-weight: 500;
+  color: $text-light;
+  min-width: 50px;
+}
+
+.preview-value {
+  color: $text-dark;
+  font-weight: 500;
+}
+
+// ─── Footer ──────────────────────────────────────────────────────────────────
+.dialog-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 16px 24px;
+  background: $bg-light;
+  border-top: 1px solid $border-light;
+}
+
+.btn-secondary {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  background: transparent;
+  color: $text-mid;
+  border: 2px solid $border-light;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: $transition;
+
+  mat-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+  }
+
+  &:hover {
+    background: $bg-light;
+    border-color: $text-light;
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: scale(0.96);
+  }
+}
+
+.btn-primary {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 24px;
+  background: linear-gradient(135deg, $primary-blue 0%, $primary-blue-dark 100%);
+  color: $bg-white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: $transition;
+
+  mat-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+  }
+
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba($primary-blue, 0.3);
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(0.96);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+  }
+}
+
+// ─── Animations ──────────────────────────────────────────────────────────────
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// ─── Responsive ──────────────────────────────────────────────────────────────
+@media (max-width: 600px) {
+  .dialog-header {
+    padding: 16px 20px;
+  }
+
+  .dialog-body {
+    padding: 20px;
+  }
+
+  .dialog-footer {
+    flex-direction: column-reverse;
+    padding: 12px 20px;
+  }
+
+  .btn-secondary,
+  .btn-primary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .preview-content {
+    grid-template-columns: 1fr;
+  }
+}

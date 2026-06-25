@@ -1,0 +1,29 @@
+<div class="dashboard-page">
+  <header class="dashboard-page__header">
+    <app-dashboard-main-header></app-dashboard-main-header>
+  </header>
+
+  <main class="dashboard-page__main">
+    <nav class="dashboard-page__tab-bar">
+      <a
+        *ngFor="let tab of tabs"
+        class="dashboard-page__tab-item"
+        [routerLink]="tab.path"
+        routerLinkActive="dashboard-page__tab-item--active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        aria-current="page"
+      >
+        <i [class]="tab.icon" aria-hidden="true"></i>
+        <span class="dashboard-page__tab-label">{{ tab.label }}</span>
+      </a>
+    </nav>
+
+    <div class="dashboard-page__content">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+
+  <footer class="dashboard-page__footer">
+    <app-dashboard-main-footer></app-dashboard-main-footer>
+  </footer>
+</div>

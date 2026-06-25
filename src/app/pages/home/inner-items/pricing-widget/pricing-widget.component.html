@@ -1,0 +1,313 @@
+<section class="pricing">
+  <div class="pricing__container">
+
+    <!-- Header -->
+    <div class="pricing__header">
+      <span class="pricing__eyebrow">Pricing</span>
+      <h2 class="pricing__title">Simple, transparent pricing.</h2>
+      <p class="pricing__subtitle">No hidden fees. No surprise charges. Scale up or down anytime.</p>
+
+      <!-- Billing Toggle -->
+      <div class="pricing__toggle">
+        <span [class.pricing__toggle-label--active]="!isAnnual">Monthly</span>
+        <button
+          class="pricing__toggle-btn"
+          [class.pricing__toggle-btn--on]="isAnnual"
+          (click)="toggleBilling()"
+          aria-label="Toggle billing period">
+          <span class="pricing__toggle-thumb"></span>
+        </button>
+        <span [class.pricing__toggle-label--active]="isAnnual">
+          Annual
+          <span class="pricing__save-badge">Save 20%</span>
+        </span>
+      </div>
+    </div>
+
+    <!-- Plans -->
+    <div class="pricing__plans">
+      <!-- Starter Plan -->
+      <div class="pricing__card">
+        <div class="pricing__card-header">
+          <div class="pricing__card-top">
+            <div class="pricing__plan-icon" style="background: #E8F2FF">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M20 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z" stroke="#0066CC" stroke-width="1.6"/>
+                <path d="M16 3H8L6 7h12l-2-4z" stroke="#0066CC" stroke-width="1.6" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+          <h3 class="pricing__plan-name">Starter</h3>
+          <p class="pricing__plan-desc">Perfect for solo shops and pop-ups just getting started.</p>
+        </div>
+
+        <div class="pricing__price-block">
+          <div class="pricing__price">
+            <span class="pricing__currency">$</span>
+            <span class="pricing__amount">{{ isAnnual ? 0 : 0 }}</span>
+            <span class="pricing__period">/mo</span>
+          </div>
+        </div>
+
+        <button
+          class="pricing__cta pricing__cta--outline"
+          (click)="onSelectPlan(plans[0])">
+          Start for Free
+        </button>
+
+        <ul class="pricing__features">
+          <li class="pricing__feature">
+            <svg class="pricing__feature-icon" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="7" stroke="#0066CC" stroke-width="1.5"/>
+              <path d="M5 8l2 2 4-4" stroke="#0066CC" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span>1 register / terminal</span>
+          </li>
+          <li class="pricing__feature">
+            <svg class="pricing__feature-icon" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="7" stroke="#0066CC" stroke-width="1.5"/>
+              <path d="M5 8l2 2 4-4" stroke="#0066CC" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span>Up to 200 transactions/month</span>
+          </li>
+          <li class="pricing__feature">
+            <svg class="pricing__feature-icon" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="7" stroke="#0066CC" stroke-width="1.5"/>
+              <path d="M5 8l2 2 4-4" stroke="#0066CC" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span>Basic sales reports</span>
+          </li>
+          <li class="pricing__feature">
+            <svg class="pricing__feature-icon" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="7" stroke="#0066CC" stroke-width="1.5"/>
+              <path d="M5 8l2 2 4-4" stroke="#0066CC" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span>Accept card &amp; cash</span>
+          </li>
+          <li class="pricing__feature pricing__feature--disabled">
+            <svg class="pricing__feature-icon" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="7" stroke="#CBD5E0" stroke-width="1.5"/>
+              <path d="M6 6l4 4M10 6l-4 4" stroke="#CBD5E0" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span>Inventory management</span>
+          </li>
+          <li class="pricing__feature pricing__feature--disabled">
+            <svg class="pricing__feature-icon" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="7" stroke="#CBD5E0" stroke-width="1.5"/>
+              <path d="M6 6l4 4M10 6l-4 4" stroke="#CBD5E0" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span>Multi-location support</span>
+          </li>
+          <li class="pricing__feature pricing__feature--disabled">
+            <svg class="pricing__feature-icon" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="7" stroke="#CBD5E0" stroke-width="1.5"/>
+              <path d="M6 6l4 4M10 6l-4 4" stroke="#CBD5E0" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span>Staff accounts</span>
+          </li>
+          <li class="pricing__feature pricing__feature--disabled">
+            <svg class="pricing__feature-icon" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="7" stroke="#CBD5E0" stroke-width="1.5"/>
+              <path d="M6 6l4 4M10 6l-4 4" stroke="#CBD5E0" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span>Priority support</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Growth Plan -->
+      <div class="pricing__card pricing__card--popular">
+        <div class="pricing__card-header">
+          <div class="pricing__card-top">
+            <div class="pricing__plan-icon" style="background: #0066CC">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M3 3v18h18M7 16l4-4 4 4 4-8" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span class="pricing__popular-badge">Most Popular</span>
+          </div>
+          <h3 class="pricing__plan-name">Growth</h3>
+          <p class="pricing__plan-desc">For growing businesses that need more power and insights.</p>
+        </div>
+
+        <div class="pricing__price-block">
+          <div class="pricing__price">
+            <span class="pricing__currency">$</span>
+            <span class="pricing__amount">{{ isAnnual ? 39 : 49 }}</span>
+            <span class="pricing__period">/mo</span>
+          </div>
+          <span class="pricing__billed-note" *ngIf="isAnnual">Billed $468/year</span>
+        </div>
+
+        <button
+          class="pricing__cta pricing__cta--primary"
+          (click)="onSelectPlan(plans[1])">
+          Get Started
+        </button>
+
+        <ul class="pricing__features">
+          <li class="pricing__feature">
+            <svg class="pricing__feature-icon" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="7" stroke="#0066CC" stroke-width="1.5"/>
+              <path d="M5 8l2 2 4-4" stroke="#0066CC" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span>Up to 5 registers</span>
+          </li>
+          <li class="pricing__feature">
+            <svg class="pricing__feature-icon" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="7" stroke="#0066CC" stroke-width="1.5"/>
+              <path d="M5 8l2 2 4-4" stroke="#0066CC" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span>Unlimited transactions</span>
+          </li>
+          <li class="pricing__feature">
+            <svg class="pricing__feature-icon" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="7" stroke="#0066CC" stroke-width="1.5"/>
+              <path d="M5 8l2 2 4-4" stroke="#0066CC" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span>Advanced analytics &amp; reports</span>
+          </li>
+          <li class="pricing__feature">
+            <svg class="pricing__feature-icon" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="7" stroke="#0066CC" stroke-width="1.5"/>
+              <path d="M5 8l2 2 4-4" stroke="#0066CC" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span>All payment methods</span>
+          </li>
+          <li class="pricing__feature">
+            <svg class="pricing__feature-icon" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="7" stroke="#0066CC" stroke-width="1.5"/>
+              <path d="M5 8l2 2 4-4" stroke="#0066CC" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span>Full inventory management</span>
+          </li>
+          <li class="pricing__feature">
+            <svg class="pricing__feature-icon" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="7" stroke="#0066CC" stroke-width="1.5"/>
+              <path d="M5 8l2 2 4-4" stroke="#0066CC" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span>Up to 3 locations</span>
+          </li>
+          <li class="pricing__feature">
+            <svg class="pricing__feature-icon" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="7" stroke="#0066CC" stroke-width="1.5"/>
+              <path d="M5 8l2 2 4-4" stroke="#0066CC" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span>Up to 10 staff accounts</span>
+          </li>
+          <li class="pricing__feature pricing__feature--disabled">
+            <svg class="pricing__feature-icon" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="7" stroke="#CBD5E0" stroke-width="1.5"/>
+              <path d="M6 6l4 4M10 6l-4 4" stroke="#CBD5E0" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span>Priority support</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Pro Plan -->
+      <div class="pricing__card">
+        <div class="pricing__card-header">
+          <div class="pricing__card-top">
+            <div class="pricing__plan-icon" style="background: #E8F2FF">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 2l3 6.3L22 9l-5 4.9L18.2 21 12 17.8 5.8 21 7 13.9 2 9l7-0.7L12 2z" stroke="#0066CC" stroke-width="1.6" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+          <h3 class="pricing__plan-name">Pro</h3>
+          <p class="pricing__plan-desc">For established businesses scaling across multiple locations.</p>
+        </div>
+
+        <div class="pricing__price-block">
+          <div class="pricing__price">
+            <span class="pricing__currency">$</span>
+            <span class="pricing__amount">{{ isAnnual ? 95 : 119 }}</span>
+            <span class="pricing__period">/mo</span>
+          </div>
+          <span class="pricing__billed-note" *ngIf="isAnnual">Billed $1,140/year</span>
+        </div>
+
+        <button
+          class="pricing__cta pricing__cta--outline"
+          (click)="onSelectPlan(plans[2])">
+          Start Pro Trial
+        </button>
+
+        <ul class="pricing__features">
+          <li class="pricing__feature">
+            <svg class="pricing__feature-icon" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="7" stroke="#0066CC" stroke-width="1.5"/>
+              <path d="M5 8l2 2 4-4" stroke="#0066CC" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span>Unlimited registers</span>
+          </li>
+          <li class="pricing__feature">
+            <svg class="pricing__feature-icon" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="7" stroke="#0066CC" stroke-width="1.5"/>
+              <path d="M5 8l2 2 4-4" stroke="#0066CC" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span>Unlimited transactions</span>
+          </li>
+          <li class="pricing__feature">
+            <svg class="pricing__feature-icon" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="7" stroke="#0066CC" stroke-width="1.5"/>
+              <path d="M5 8l2 2 4-4" stroke="#0066CC" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span>Custom reports &amp; exports</span>
+          </li>
+          <li class="pricing__feature">
+            <svg class="pricing__feature-icon" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="7" stroke="#0066CC" stroke-width="1.5"/>
+              <path d="M5 8l2 2 4-4" stroke="#0066CC" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span>All payment methods + crypto</span>
+          </li>
+          <li class="pricing__feature">
+            <svg class="pricing__feature-icon" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="7" stroke="#0066CC" stroke-width="1.5"/>
+              <path d="M5 8l2 2 4-4" stroke="#0066CC" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span>Advanced inventory + PO management</span>
+          </li>
+          <li class="pricing__feature">
+            <svg class="pricing__feature-icon" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="7" stroke="#0066CC" stroke-width="1.5"/>
+              <path d="M5 8l2 2 4-4" stroke="#0066CC" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span>Unlimited locations</span>
+          </li>
+          <li class="pricing__feature">
+            <svg class="pricing__feature-icon" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="7" stroke="#0066CC" stroke-width="1.5"/>
+              <path d="M5 8l2 2 4-4" stroke="#0066CC" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span>Unlimited staff + role permissions</span>
+          </li>
+          <li class="pricing__feature">
+            <svg class="pricing__feature-icon" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="7" stroke="#0066CC" stroke-width="1.5"/>
+              <path d="M5 8l2 2 4-4" stroke="#0066CC" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span>24/7 dedicated support</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Enterprise Callout -->
+    <div class="pricing__enterprise">
+      <div class="pricing__enterprise-content">
+        <h3 class="pricing__enterprise-title">Need something bigger?</h3>
+        <p class="pricing__enterprise-text">Custom contracts, dedicated support, and on-premise deployment for large retail chains and enterprise customers.</p>
+      </div>
+      <button class="pricing__enterprise-btn" (click)="onContactSales()">
+        Contact Sales
+        <svg viewBox="0 0 16 16" fill="none">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+</section>

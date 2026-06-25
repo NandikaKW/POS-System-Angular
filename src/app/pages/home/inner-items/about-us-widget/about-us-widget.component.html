@@ -1,0 +1,117 @@
+<section class="about">
+  <div class="about__slash-top"></div>
+
+  <div class="about__container">
+    <!-- Section Header -->
+    <div class="about__header">
+      <span class="about__eyebrow">Who We Are</span>
+      <h2 class="about__title">Built by retailers, <br /><span class="about__title--accent">for retailers.</span></h2>
+      <p class="about__intro">
+        We started as a small retail team frustrated by clunky, expensive POS software.
+        Today, we power thousands of businesses across the globe — and we still believe
+        great tools should be simple, fast, and fair.
+      </p>
+    </div>
+
+    <!-- Feature Grid -->
+    <div class="about__grid">
+      <!-- Feature 1: Lightning Fast -->
+      <div class="about__feature">
+        <div class="about__feature-icon">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#0066CC" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="about__feature-title">Lightning Fast</h3>
+        <p class="about__feature-desc">Process transactions in under 1 second. No lag, no timeouts — even during peak hours with hundreds of concurrent users.</p>
+      </div>
+
+      <!-- Feature 2: Always Online -->
+      <div class="about__feature">
+        <div class="about__feature-icon">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zM2 12h20M12 2c-2.5 3-4 6.5-4 10s1.5 7 4 10M12 2c2.5 3 4 6.5 4 10s-1.5 7-4 10" stroke="#0066CC" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="about__feature-title">Always Online</h3>
+        <p class="about__feature-desc">Our offline-first architecture means your business never stops, even when internet connectivity drops unexpectedly.</p>
+      </div>
+
+      <!-- Feature 3: Real-Time Analytics -->
+      <div class="about__feature">
+        <div class="about__feature-icon">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M3 3v18h18M7 16l4-4 4 4 4-4" stroke="#0066CC" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="about__feature-title">Real-Time Analytics</h3>
+        <p class="about__feature-desc">Watch your sales, inventory levels, and customer trends update live. Make decisions with data, not guesswork.</p>
+      </div>
+
+      <!-- Feature 4: Multi-Location Ready -->
+      <div class="about__feature">
+        <div class="about__feature-icon">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="#0066CC" stroke-width="1.8"/>
+            <circle cx="12" cy="10" r="3" stroke="#0066CC" stroke-width="1.8"/>
+          </svg>
+        </div>
+        <h3 class="about__feature-title">Multi-Location Ready</h3>
+        <p class="about__feature-desc">Manage every branch from a single dashboard. Sync inventory, staff, and reports across all your locations instantly.</p>
+      </div>
+
+      <!-- Feature 5: Secure Payments -->
+      <div class="about__feature">
+        <div class="about__feature-icon">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#0066CC" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="about__feature-title">Secure Payments</h3>
+        <p class="about__feature-desc">PCI DSS Level 1 compliant. Accept cards, mobile wallets, QR codes, and cash with end-to-end encryption on every transaction.</p>
+      </div>
+
+      <!-- Feature 6: 24/7 Support -->
+      <div class="about__feature">
+        <div class="about__feature-icon">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="#0066CC" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="about__feature-title">24/7 Support</h3>
+        <p class="about__feature-desc">Real humans available around the clock. Live chat, phone, and email — because your business doesn't keep office hours.</p>
+      </div>
+    </div>
+
+    <!-- Story Strip -->
+    <div class="about__story">
+      <div class="about__story-visual">
+        <div class="about__story-card">
+          <div class="about__story-year">2019</div>
+          <p class="about__story-text">Founded with a mission to make enterprise-grade POS accessible to every business.</p>
+        </div>
+        <div class="about__story-line"></div>
+        <div class="about__story-card about__story-card--accent">
+          <div class="about__story-year">Today</div>
+          <p class="about__story-text">50,000+ businesses trust us to run their daily operations across 30+ countries.</p>
+        </div>
+      </div>
+
+      <div class="about__story-content">
+        <h3 class="about__story-heading">Our mission is simplicity at scale.</h3>
+        <p class="about__story-body">
+          We believe every business — from a corner bakery to a multi-location chain —
+          deserves software that gets out of the way and lets you focus on your customers.
+          That's why we obsess over speed, reliability, and a zero-friction experience
+          every single day.
+        </p>
+        <div class="about__values">
+          <div class="about__value" *ngFor="let val of values">
+            <span class="about__value-dot"></span>
+            <span>{{ val }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
