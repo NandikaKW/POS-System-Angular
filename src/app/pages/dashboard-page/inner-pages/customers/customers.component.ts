@@ -5,10 +5,10 @@ import { DUMMY_CUSTOMERS } from "../../../../dto/DummyData";
 import {PageEvent} from "@angular/material/paginator";
 import {
   CustomerCreateDialogComponentComponent
-} from "./inner/customer-create-dialog-component/customer-create-dialog-component.component";
+} from "./inner/customer-create-dialog-component/customer-create-dialog-component";
 import {
   CustomerUpdateDialogComponentComponent
-} from "./inner/customer-update-dialog-component/customer-update-dialog-component.component";
+} from "./inner/customer-update-dialog-component/customer-update-dialog-component";
 
 
 

@@ -9,7 +9,7 @@ import {DashboardPageComponent} from "./pages/dashboard-page/dashboard-page.comp
 import {AuthGuard} from "./guards/auth-guard";
 import {StatisticsComponent} from "./pages/dashboard-page/inner-pages/statistics/statistics.component";
 import {CustomersComponent} from "./pages/dashboard-page/inner-pages/customers/customers.component";
-import {ProductsComponent} from "./pages/dashboard-page/inner-pages/products/products.component";
+import {Products} from "./pages/dashboard-page/inner-pages/products/products.component";
 import {OrdersComponent} from "./pages/dashboard-page/inner-pages/orders/orders.component";
 import {PlaceOrderComponent} from "./pages/dashboard-page/inner-pages/place-order/place-order.component";
 
@@ -34,7 +34,7 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'customer', pathMatch: 'full' },
       { path: 'customer', component: CustomersComponent },
-      { path: 'products', component: ProductsComponent },
+      { path: 'products', component: Products },
       { path: 'orders', component: OrdersComponent },
       { path: 'placeorders', component: PlaceOrderComponent },
       { path: 'reports', component: StatisticsComponent }

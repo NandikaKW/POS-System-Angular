@@ -17,12 +17,12 @@ import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.com
 import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.component';
 import { HomePageContextComponent } from './pages/home-page-context/home-page-context.component';
 import { CustomersComponent } from './pages/dashboard-page/inner-pages/customers/customers.component';
-import { ProductsComponent } from './pages/dashboard-page/inner-pages/products/products.component';
+import { Products  } from './pages/dashboard-page/inner-pages/products/products.component';
 import { OrdersComponent } from './pages/dashboard-page/inner-pages/orders/orders.component';
 import { PlaceOrderComponent } from './pages/dashboard-page/inner-pages/place-order/place-order.component';
 import { StatisticsComponent } from './pages/dashboard-page/inner-pages/statistics/statistics.component';
-import { CustomerCreateDialogComponentComponent } from './pages/dashboard-page/inner-pages/customers/inner/customer-create-dialog-component/customer-create-dialog-component.component';
-import { CustomerUpdateDialogComponentComponent } from './pages/dashboard-page/inner-pages/customers/inner/customer-update-dialog-component/customer-update-dialog-component.component';
+import { CustomerCreateDialogComponentComponent } from './pages/dashboard-page/inner-pages/customers/inner/customer-create-dialog-component/customer-create-dialog-component';
+import { CustomerUpdateDialogComponentComponent } from './pages/dashboard-page/inner-pages/customers/inner/customer-update-dialog-component/customer-update-dialog-component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from "@angular/material/icon";
 import {MatTooltipModule} from "@angular/material/tooltip";
@@ -31,7 +31,9 @@ import {MatDialogModule} from "@angular/material/dialog";
 import {MatButtonModule} from "@angular/material/button";
 import {MatInputModule} from "@angular/material/input";
 import {MatFormFieldModule} from "@angular/material/form-field";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { ProductCreateDialogComponent   } from './pages/dashboard-page/inner-pages/products/inner/product-create-dialog-component/product-create-dialog-component';
+import { ProductUpdateDialogComponent  } from './pages/dashboard-page/inner-pages/products/inner/product-update-dialog-component/product-update-dialog-component';
 
 @NgModule({
   declarations: [
@@ -47,12 +49,14 @@ import {FormsModule} from "@angular/forms";
     DashboardPageComponent,
     HomePageContextComponent,
     CustomersComponent,
-    ProductsComponent,
+    Products,
     OrdersComponent,
     PlaceOrderComponent,
     StatisticsComponent,
     CustomerCreateDialogComponentComponent,
-    CustomerUpdateDialogComponentComponent
+    CustomerUpdateDialogComponentComponent,
+    ProductCreateDialogComponent,
+    ProductUpdateDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -70,7 +74,8 @@ import {FormsModule} from "@angular/forms";
     MatButtonModule,
     MatInputModule,
     MatFormFieldModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

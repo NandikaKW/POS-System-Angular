@@ -4,8 +4,8 @@ import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-customer-update-dialog-component',
-  templateUrl: './customer-update-dialog-component.component.html',
-  styleUrls: ['./customer-update-dialog-component.component.scss']
+  templateUrl: './customer-update-dialog-component.html',
+  styleUrls: ['./customer-update-dialog-component.scss']
 })
 export class CustomerUpdateDialogComponentComponent implements OnInit {
   customer: Customer;

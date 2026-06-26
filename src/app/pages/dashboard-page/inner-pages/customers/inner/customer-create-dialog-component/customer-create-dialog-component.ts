@@ -6,8 +6,8 @@ import {Customer} from "../../../../../../dto/Customer";
 
 @Component({
   selector: 'app-customer-create-dialog-component',
-  templateUrl: './customer-create-dialog-component.component.html',
-  styleUrls: ['./customer-create-dialog-component.component.scss']
+  templateUrl: './customer-create-dialog-component.html',
+  styleUrls: ['./customer-create-dialog-component.scss']
 })
 export class CustomerCreateDialogComponentComponent implements OnInit {
   customer: Partial<Customer> = {
