@@ -7,11 +7,11 @@ import {LoginPageComponent} from "./pages/auth/login-page/login-page.component";
 import {RegisterPageComponent} from "./pages/auth/register-page/register-page.component";
 import {DashboardPageComponent} from "./pages/dashboard-page/dashboard-page.component";
 import {AuthGuard} from "./guards/auth-guard";
-import {StatisticsComponent} from "./pages/dashboard-page/inner-pages/statistics/statistics.component";
+import {Statistics} from "./pages/dashboard-page/inner-pages/statistics/statistics.component";
 import {CustomersComponent} from "./pages/dashboard-page/inner-pages/customers/customers.component";
 import {Products} from "./pages/dashboard-page/inner-pages/products/products.component";
-import {OrdersComponent} from "./pages/dashboard-page/inner-pages/orders/orders.component";
-import {PlaceOrderComponent} from "./pages/dashboard-page/inner-pages/place-order/place-order.component";
+import {Orders} from "./pages/dashboard-page/inner-pages/orders/orders.component";
+import {PlaceOrder} from "./pages/dashboard-page/inner-pages/place-order/place-order.component";
 
 const routes: Routes = [
   { path: '', redirectTo: 'home/process', pathMatch: 'full' },
@@ -35,9 +35,9 @@ const routes: Routes = [
       { path: '', redirectTo: 'customer', pathMatch: 'full' },
       { path: 'customer', component: CustomersComponent },
       { path: 'products', component: Products },
-      { path: 'orders', component: OrdersComponent },
-      { path: 'placeorders', component: PlaceOrderComponent },
-      { path: 'reports', component: StatisticsComponent }
+      { path: 'orders', component: Orders },
+      { path: 'placeorders', component: PlaceOrder },
+      { path: 'reports', component: Statistics }
     ]
   },
 

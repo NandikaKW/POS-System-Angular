@@ -18,9 +18,9 @@ import { DashboardPageComponent } from './pages/dashboard-page/dashboard-page.co
 import { HomePageContextComponent } from './pages/home-page-context/home-page-context.component';
 import { CustomersComponent } from './pages/dashboard-page/inner-pages/customers/customers.component';
 import { Products  } from './pages/dashboard-page/inner-pages/products/products.component';
-import { OrdersComponent } from './pages/dashboard-page/inner-pages/orders/orders.component';
-import { PlaceOrderComponent } from './pages/dashboard-page/inner-pages/place-order/place-order.component';
-import { StatisticsComponent } from './pages/dashboard-page/inner-pages/statistics/statistics.component';
+import {Orders} from './pages/dashboard-page/inner-pages/orders/orders.component';
+import { PlaceOrder } from './pages/dashboard-page/inner-pages/place-order/place-order.component';
+import {Statistics} from './pages/dashboard-page/inner-pages/statistics/statistics.component';
 import { CustomerCreateDialogComponentComponent } from './pages/dashboard-page/inner-pages/customers/inner/customer-create-dialog-component/customer-create-dialog-component';
 import { CustomerUpdateDialogComponentComponent } from './pages/dashboard-page/inner-pages/customers/inner/customer-update-dialog-component/customer-update-dialog-component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -34,6 +34,8 @@ import {MatFormFieldModule} from "@angular/material/form-field";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { ProductCreateDialogComponent   } from './pages/dashboard-page/inner-pages/products/inner/product-create-dialog-component/product-create-dialog-component';
 import { ProductUpdateDialogComponent  } from './pages/dashboard-page/inner-pages/products/inner/product-update-dialog-component/product-update-dialog-component';
+import { OrderDetailDialogComponent } from './pages/dashboard-page/inner-pages/orders/inner/order-detail-dialog/order-detail-dialog.component';
+import {NgApexchartsModule} from "ng-apexcharts";
 
 @NgModule({
   declarations: [
@@ -50,13 +52,14 @@ import { ProductUpdateDialogComponent  } from './pages/dashboard-page/inner-page
     HomePageContextComponent,
     CustomersComponent,
     Products,
-    OrdersComponent,
-    PlaceOrderComponent,
-    StatisticsComponent,
+    Orders,
+    PlaceOrder,
+    Statistics,
     CustomerCreateDialogComponentComponent,
     CustomerUpdateDialogComponentComponent,
     ProductCreateDialogComponent,
-    ProductUpdateDialogComponent
+    ProductUpdateDialogComponent,
+    OrderDetailDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -75,7 +78,8 @@ import { ProductUpdateDialogComponent  } from './pages/dashboard-page/inner-page
     MatInputModule,
     MatFormFieldModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgApexchartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

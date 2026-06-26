@@ -1,0 +1,510 @@
+
+.page-container {
+  padding: 2rem;
+  background: #f5f7fa;
+  min-height: 100vh;
+
+  .page-header {
+    margin-bottom: 2rem;
+
+    .page-title {
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: #2d3748;
+      margin: 0 0 0.25rem 0;
+    }
+
+    .page-subtitle {
+      color: #718096;
+      margin: 0;
+      font-size: 0.95rem;
+    }
+  }
+}
+
+// KPI Cards Grid
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+
+  .kpi-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .kpi-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+
+      mat-icon {
+        font-size: 24px;
+        width: 24px;
+        height: 24px;
+        color: white;
+      }
+
+      &.green {
+        background: linear-gradient(135deg, #16a085, #1abc9c);
+      }
+
+      &.blue {
+        background: linear-gradient(135deg, #2980b9, #3498db);
+      }
+
+      &.primary {
+        background: linear-gradient(135deg, #8e44ad, #9b59b6);
+      }
+
+      &.orange {
+        background: linear-gradient(135deg, #e67e22, #f39c12);
+      }
+    }
+
+    .kpi-info {
+      flex: 1;
+      min-width: 0;
+
+      .kpi-value {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #2d3748;
+        margin-bottom: 0.15rem;
+        line-height: 1.2;
+      }
+
+      .kpi-label {
+        font-size: 0.85rem;
+        color: #718096;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+    }
+  }
+}
+
+// Chart Cards
+.chart-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  .chart-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid #edf2f7;
+
+    .chart-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+
+      mat-icon {
+        color: #4a5568;
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
+      }
+
+      .chart-title {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #2d3748;
+        line-height: 1.3;
+      }
+
+      .chart-subtitle {
+        margin: 0;
+        font-size: 0.85rem;
+        color: #a0aec0;
+      }
+    }
+
+    .chart-badge {
+      background: #ebf8ff;
+      color: #4299e1;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+  }
+
+  .chart-body {
+    padding: 0.75rem 1.5rem 1.5rem;
+
+    &.donut-body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 280px;
+
+      apx-chart {
+        width: 100%;
+        max-width: 400px;
+      }
+    }
+
+    apx-chart {
+      width: 100%;
+    }
+  }
+
+  // Half-width charts
+  &.half {
+    flex: 1;
+    min-width: 0;
+
+    .chart-body {
+      padding: 0.5rem 1rem 1rem;
+
+      apx-chart {
+        width: 100%;
+      }
+    }
+  }
+}
+
+// Bottom Charts Row
+.charts-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+
+  @media (max-width: 1200px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .chart-card {
+    margin-bottom: 0;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .page-container {
+    padding: 1rem;
+
+    .page-header {
+      margin-bottom: 1.5rem;
+
+      .page-title {
+        font-size: 1.5rem;
+      }
+
+      .page-subtitle {
+        font-size: 0.9rem;
+      }
+    }
+
+    .kpi-grid {
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+
+      .kpi-card {
+        padding: 1rem;
+
+        .kpi-icon {
+          width: 44px;
+          height: 44px;
+
+          mat-icon {
+            font-size: 20px;
+            width: 20px;
+            height: 20px;
+          }
+        }
+
+        .kpi-info {
+          .kpi-value {
+            font-size: 1.25rem;
+          }
+
+          .kpi-label {
+            font-size: 0.75rem;
+          }
+        }
+      }
+    }
+
+    .chart-card {
+      .chart-header {
+        padding: 1rem;
+
+        .chart-title-wrap {
+          .chart-title {
+            font-size: 0.95rem;
+          }
+
+          .chart-subtitle {
+            font-size: 0.8rem;
+          }
+        }
+
+        .chart-badge {
+          font-size: 0.7rem;
+          padding: 0.2rem 0.6rem;
+        }
+      }
+
+      .chart-body {
+        padding: 0.5rem 0.75rem 0.75rem;
+
+        &.donut-body {
+          min-height: 220px;
+        }
+      }
+    }
+
+    .charts-row {
+      gap: 1rem;
+    }
+  }
+}
+
+// Print styles
+@media print {
+  .page-container {
+    background: white;
+    padding: 1rem;
+
+    .kpi-card {
+      box-shadow: none !important;
+      border: 1px solid #e2e8f0;
+
+      &:hover {
+        transform: none !important;
+      }
+    }
+
+    .chart-card {
+      box-shadow: none !important;
+      border: 1px solid #e2e8f0;
+      break-inside: avoid;
+
+      .chart-header {
+        border-bottom-color: #e2e8f0;
+      }
+    }
+
+    .charts-row {
+      break-inside: avoid;
+    }
+  }
+}
+
+// Dark mode support
+@media (prefers-color-scheme: dark) {
+  .page-container {
+    background: #1a202c;
+
+    .page-header {
+      .page-title {
+        color: #f7fafc;
+      }
+
+      .page-subtitle {
+        color: #a0aec0;
+      }
+    }
+
+    .kpi-grid {
+      .kpi-card {
+        background: #2d3748;
+
+        .kpi-info {
+          .kpi-value {
+            color: #f7fafc;
+          }
+
+          .kpi-label {
+            color: #a0aec0;
+          }
+        }
+      }
+    }
+
+    .chart-card {
+      background: #2d3748;
+
+      .chart-header {
+        border-bottom-color: #4a5568;
+
+        .chart-title-wrap {
+          mat-icon {
+            color: #e2e8f0;
+          }
+
+          .chart-title {
+            color: #f7fafc;
+          }
+
+          .chart-subtitle {
+            color: #a0aec0;
+          }
+        }
+
+        .chart-badge {
+          background: #2c5282;
+          color: #63b3ed;
+        }
+      }
+
+      .chart-body {
+        ::ng-deep {
+          .apexcharts-text {
+            fill: #e2e8f0 !important;
+          }
+
+          .apexcharts-gridline {
+            stroke: #4a5568 !important;
+          }
+
+          .apexcharts-legend-text {
+            color: #e2e8f0 !important;
+          }
+
+          .apexcharts-tooltip {
+            background: #2d3748 !important;
+            border-color: #4a5568 !important;
+
+            .apexcharts-tooltip-title {
+              background: #4a5568 !important;
+              color: #f7fafc !important;
+            }
+
+            .apexcharts-tooltip-y-group {
+              color: #e2e8f0 !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Loading state skeleton animation (optional)
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.kpi-card.loading {
+  .kpi-value,
+  .kpi-label {
+    background: linear-gradient(
+        90deg,
+        #f0f2f5 25%,
+        #e2e8f0 50%,
+        #f0f2f5 75%
+    );
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite;
+    border-radius: 4px;
+    color: transparent;
+  }
+
+  .kpi-value {
+    height: 28px;
+    width: 80%;
+  }
+
+  .kpi-label {
+    height: 16px;
+    width: 60%;
+  }
+}
+
+// Accessibility - Focus states
+.chart-card,
+.kpi-card {
+  &:focus-visible {
+    outline: 2px solid #4299e1;
+    outline-offset: 2px;
+  }
+}
+
+// Animation for cards on load
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.kpi-card {
+  animation: fadeInUp 0.5s ease forwards;
+
+  &:nth-child(1) {
+    animation-delay: 0.05s;
+  }
+  &:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+  &:nth-child(3) {
+    animation-delay: 0.15s;
+  }
+  &:nth-child(4) {
+    animation-delay: 0.2s;
+  }
+}
+
+.chart-card {
+  animation: fadeInUp 0.5s ease forwards;
+  animation-delay: 0.25s;
+  opacity: 0;
+
+  &.half {
+    &:nth-child(1) {
+      animation-delay: 0.35s;
+    }
+    &:nth-child(2) {
+      animation-delay: 0.4s;
+    }
+  }
+}
